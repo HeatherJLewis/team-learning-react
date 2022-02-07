@@ -11,7 +11,6 @@ function App() {
     }, 1000);
     return () => {
       clearInterval(intervalId);
-      console.log("Cleanup");
     };
   }, [setNumber, number]);
 
