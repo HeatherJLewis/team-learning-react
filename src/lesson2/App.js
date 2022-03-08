@@ -12,7 +12,7 @@ class App extends Component {
 
   handleEvent(event) {
     // console.log('SETSTATE!-----')
-    // this.setState({ color: event.detail });
+    this.setState({ color: event.detail });
     this.forceUpdate()
   }
 
