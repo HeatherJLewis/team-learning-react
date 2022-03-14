@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react';
 
+let eventColour;
+
 function App() {
     const [colour, setColour] = useState('');
     const [counter, setCounter] = useState(0);
 
     useEffect(() => {
         document.addEventListener('colourChange', (event) => {
-            setColour(event.detail);
+            console.log('eventColour', eventColour);
+            console.log('EVENT.DETAIL', event.detail);
+
+            if (eventColour !== event.detail) {
+                setColour(event.detail);
+            } else {
+                console.log('SAME COLOUR')
+            }
+
+            eventColour = event.detail;
         });
 
         return () => {
